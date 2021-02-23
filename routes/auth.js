@@ -31,8 +31,8 @@ router.get('/', authMiddle, async (req, res) => {
 // @desc      authenticate user & get token (login)
 // @access    public
 router.post('/', [
-  check('email', 'Please include a valid email').isEmail(),
-  check('password', 'Please enter password').exists()
+  check('email', 'Please enter a valid email').isEmail(),
+  check('password', 'Please enter password').not().isEmpty()
 ], async (req,res) =>{ 
 
 
