@@ -15,7 +15,7 @@ router.get('/', authMiddle, async (req, res) => {
   
   try {
 
-    const user = await (await User.findById(req.user));
+    const user = await (await User.findById(req.user).select('-password'));
     res.json({ user })
     
   } catch (err) {
@@ -25,6 +25,7 @@ router.get('/', authMiddle, async (req, res) => {
     
   }
 })
+
 
 
 // @route     POST api/auth
