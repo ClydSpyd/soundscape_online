@@ -131,6 +131,10 @@ router.get('/:user_id', authMiddle, async (req, res) => {
 
     console.error(err.message)
 
+    if(err.kind==='ObjectId') {
+      return res.status(400).json({ msg: 'No profile found for this user' })
+    }
+
     res.status(500).send('server error')
   }
 
