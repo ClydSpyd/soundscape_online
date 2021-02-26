@@ -26,26 +26,25 @@ const ProfileSchema = new mongoose.Schema({
     type:[ mongoose.Schema.Types.ObjectId ],
     ref: 'discovery'
   },
-  social:{
-    spotify:{
-      type: String
-    },
-    soundcloud:{
-      type: String
-    },
-    youtube:{
-      type: String
-    },
-    facebook:{
-      type: String
-    },
-    instagram:{
-      type: String
-    },
-    twitter:{
-      type: String
-    }
+  spotify:{
+    type: String
+  },
+  soundcloud:{
+    type: String
+  },
+  youtube:{
+    type: String
+  },
+  facebook:{
+    type: String
+  },
+  instagram:{
+    type: String
+  },
+  twitter:{
+    type: String
   }
+  
 })
 
 module.exports = Profile = mongoose.model('profile', ProfileSchema)

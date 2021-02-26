@@ -73,14 +73,15 @@ router.post('/', authMiddle, async (req, res) => {
 
   // @@TODO - deal with projects being passed/created by user on profile
 
-  profileObject.social = {}
-  if (spotify) profileObject.social.spotify = spotify
-  if (soundcloud) profileObject.social.soundcloud = soundcloud
-  if (youtube) profileObject.social.youtube = youtube
-  if (facebook) profileObject.social.facebook = facebook
-  if (instagram) profileObject.social.instagram = instagram
-  if (twitter) profileObject.social.twitter = twitter
+  // profileObject.social = {}
+  if (spotify) profileObject.spotify = spotify
+  if (soundcloud) profileObject.soundcloud = soundcloud
+  if (youtube) profileObject.youtube = youtube
+  if (facebook) profileObject.facebook = facebook
+  if (instagram) profileObject.instagram = instagram
+  if (twitter) profileObject.twitter = twitter
 
+  console.log(profileObject)
 
   try {
 
