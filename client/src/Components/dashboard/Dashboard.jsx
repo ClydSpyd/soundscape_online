@@ -21,7 +21,6 @@ const Dashboard = () => {
 
       {
         user && user.name && profile && !profile.loading ?
-
           <>
 
             <DashSidebar user={user} />
