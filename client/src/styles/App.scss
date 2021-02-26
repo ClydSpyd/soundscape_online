@@ -1,0 +1,329 @@
+@import './mixins.scss';
+@import './variables.scss';
+@import './animations.scss';
+
+@import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,300;0,400;0,500;0,600;0,700;0,900;1,300;1,400;1,500;1,600;1,700;1,900&display=swap');
+
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Barlow', sans-serif;
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}
+a,
+a:visited{
+  color: inherit;
+}
+
+body {
+  font-family: 'Raleway', sans-serif;
+  font-size: 1.2rem;
+  line-height: 1.6;
+  background-color: #fff;
+  color: #333;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+p{
+  font-size: 14px;
+
+}
+
+p.error-text{
+  color:red;
+  font-size: 13px;
+  position: absolute;
+  bottom:96px;
+}
+
+h5>span{
+  color: $turquiose;
+  font-size: 12px;
+  text-decoration: underline;
+  font-weight: 300;
+  margin-left: 5px;
+}
+
+/* Utilities */
+.container {
+  max-width: 1100px;
+  margin: auto;
+  overflow: hidden;
+  padding: 0 2rem;
+  margin-top: 6rem;
+  margin-bottom: 3rem;
+}
+.section-container{
+  margin: auto;
+  position: relative;
+  max-width: 1200px;
+  box-sizing:border-box;
+  box-sizing:border-box;
+  min-height: 100vh;
+}
+
+.left-top-padd{
+  padding:15px 0 0 15px;
+}
+
+.flex{
+  display: flex;
+}
+
+.flex-column{
+  display: flex;
+  flex-direction: column;
+}
+
+.shift-down{
+  position: relative;
+  top:80px;
+  height: calc(100vh - 140px);
+}
+.shift-up{
+  position: relative;
+  top:-80px;
+}
+
+.full-width{
+  max-width: initial;
+  box-sizing:border-box;
+}
+
+.flex-center{
+  width: fit-content;
+  padding: 1rem;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &.column{
+    flex-direction: column;
+  }
+}
+
+
+
+.loaderDiv{
+  margin: auto;
+  img{
+    height: 200px;
+  }
+}
+
+.zero-opacity{
+  opacity: 1;
+}
+
+.round-img{
+  border-radius: 50%;
+}
+
+/* text styles */
+.light{
+  font-weight: 300;
+}
+.medium{
+  font-weight: 500;
+}
+.bold{
+  font-weight: 700;
+}
+.subtext{
+  font-size: 14px;
+}
+
+.blue{
+  color: $turquiose;
+}
+.purple{
+  color: $purple
+}
+
+.blue-hover{
+  transition: .1s ease-in-out all;
+  &:hover{
+    color: $turquiose;
+  }
+}
+.purple-hover{
+  transition: .1s ease-in-out all;
+  &:hover{
+    color: $purple
+  }
+}
+.m-0{
+  margin: 0;
+}
+.m-05{
+  margin: 0.5;
+}
+.m-1{
+  margin: 1rem;
+}
+.m-15{
+  margin: 1.5rem;
+}
+.m-2{
+  margin: 2.5rem,;
+}
+
+.btn-purple{
+  @include mainButton($purple, white, 14px, 30px, 150px);
+  margin: 0 5px;
+}
+
+.btn-blue{
+  @include solidButton($turquiose, white, 14px, 30px, 150px);
+  margin: 0 5px
+}
+
+.close-circle{
+  background: url('../assets/icons/close_hollow_circle-black.svg') no-repeat center/contain;
+  cursor: pointer;
+}
+
+.bg-dark{
+  background-color: grey;
+}
+
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.7rem 2rem;
+  position: fixed;
+  z-index: 1;
+  width: 100%;
+  top: 0;
+  // border-bottom: solid 1px red;
+  opacity: 0.9;
+
+  &.landing{
+    background-color: rgba(157, 157, 157, 0.659);
+  }
+}
+
+.navbar ul {
+  display: flex;
+
+  li{
+    font-size: 16px;
+  }
+}
+
+.navbar a {
+  color: #fff !important;
+  padding: 0.45rem;
+  margin: 0 0.25rem;
+}
+
+.navbar ul>li>a:hover {
+  text-decoration: underline !important;
+}
+
+.navbar .welcome span {
+  margin-right: 0.6rem;
+}
+
+a.nav_active{
+  color: $turquiose !important;
+  pointer-events: none;
+}
+
+/* Landing Page, login page */
+.principal-container,
+.login {
+  position: relative;
+  background: url('../assets/img/showcase_img.jpg') no-repeat bottom center/cover;
+  height: 100vh;
+}
+
+.landing-inner, 
+.login-inner {
+  color: #fff;
+  height: 100%;
+  width: 80%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  bottom: 15%;
+  transition: .2s ease-in-out all;
+
+  img.logo-main{
+    height: 100px;
+    margin-bottom: 20px;
+  }
+
+  form{
+    border-radius: 5px;
+    background-color: white;
+    box-sizing:border-box;
+    padding:40px;
+    position: relative;
+    transition: .4s all ease-in-out;
+
+
+    .close-circle{
+      height: 15px;
+      width: 15px;
+      position: absolute;
+      top:10px;
+      right: 15px;
+    }
+
+    h2{
+      margin-bottom: 10px;
+    }
+
+    h2+p{
+      font-size: 13px;
+      color: #858585;
+      margin-bottom: 10px;
+    }
+    
+
+    input{
+      width: 300px;
+      height: 30px;
+      margin:5px 0;
+      box-sizing:border-box;
+      padding:0 10px;
+    }
+
+    button{
+      margin-top: 25px;
+    }
+
+    p.subtext{
+      position: relative;
+      top:15px;
+
+      a{
+        text-decoration: underline;
+      }
+    }
+  }
+}

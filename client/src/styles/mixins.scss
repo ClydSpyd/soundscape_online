@@ -1,0 +1,57 @@
+
+  @mixin mainButton ($color, $bg, $font-size, $height, $width) {
+    height:$height;
+    width:$width;
+    color:$color;
+    font-size: $font-size;
+    // background: url($imgUrl);
+    background-color: transparent;
+    border:1px solid $color;
+    text-align: center;
+    line-height: $height;
+    box-sizing:border-box;
+    padding: 0 20px;
+    cursor: pointer;
+    transition: .4s all ease-out;
+    border-radius: 6px;
+    position: relative;
+    background-repeat: no-repeat;
+    text-decoration: none;
+    
+    &:hover{
+      color:$bg;
+      // background: url($hovImgUrl);
+      background-color: $color;
+      background-repeat: no-repeat;
+      }
+      
+  }
+
+  @mixin solidButton ( $bg, $color, $font-size, $height, $width) {
+    height:$height;
+    width:$width;
+    color:$color;
+    font-size: $font-size;
+    // background: url($imgUrl);
+
+    background-color: $bg;
+    border:1px solid $bg;
+    text-align: center;
+    line-height: $height;
+    cursor: pointer;
+    transition: .4s all ease-out;
+    border-radius: 6px;
+    position: relative;
+    background-repeat: no-repeat;
+    text-decoration: none;
+    
+    &:hover{
+      // background: url($hovImgUrl);
+      color:$bg;
+      background-color: $color;
+      border-color: $bg;
+      background-repeat: no-repeat;
+      }
+      
+  }
+

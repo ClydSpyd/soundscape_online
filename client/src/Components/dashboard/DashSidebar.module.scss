@@ -1,0 +1,107 @@
+@import '../../styles/App.scss';
+
+.dashSidebar{
+  min-width:250px;
+  position: fixed;
+  width: fit-content;
+  box-sizing:border-box;
+  margin:0;
+
+  .header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border:1px solid grey;
+    border-radius: 3px;
+    padding:25px 15px;
+
+    *{
+      font-weight: 500;
+    }
+
+    h3{
+      max-width: 250px;
+      text-align: center;
+      line-height: 25px;
+      margin:10px 0 5px 0;
+      // overflow: hidden;
+      // text-overflow: ellipsis;
+      // white-space: nowrap;
+    }
+
+    p{
+      text-decoration: underline;
+      cursor: pointer;
+      margin:2px 0;
+    }
+
+    .links{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 80%;
+      max-width: 200px;
+      margin:10px auto 5px auto;
+      a{
+        // @include mainButton(grey, white, 12px, 20px, 60px)
+        color: $purple;
+        font-size: 12px;
+        text-align: center;
+        width: 65px;
+        height: 20px;
+        padding: 0;
+        border-radius: 2px;
+        margin: 0 2px;
+        // text-decoration: underline;
+        border: 1px solid transparent;
+        transition: .3s ease-in-out all;
+        
+        &:hover{
+          // background-color: $purple;
+          border-color: $purple;
+          color: $purple;
+          text-decoration: none;
+        }
+      }
+
+      .break{
+        height: 20px;
+        width: 2px;
+        background-color: grey;
+      }
+    }
+
+
+    img{
+      height:120px;
+      width:120px;
+      object-fit: contain;
+      border-radius: 50%;
+      overflow: hidden;
+      margin-bottom: 5px;
+    }
+  }
+
+  .linkBlock{
+    height: 40px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border:1px solid grey;
+    border-radius: 3px;
+    margin: 5px 0;
+    cursor: pointer;
+    left:0;
+    position: relative;
+    transition: .2s all ease-in-out;
+    font-size: 16px;
+
+    &:hover{
+      width: 102%;
+      // left:5px;
+      color: $purple;
+      border-color: $purple;
+    }
+  }
+}
