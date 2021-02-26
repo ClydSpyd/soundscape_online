@@ -42,6 +42,8 @@ router.get('/', authMiddle, async (req, res) => {
 // @access    private
 router.post('/', authMiddle, async (req, res) => {
 
+  console.log(req.body)
+
   const {
     avatar,
     location,
@@ -66,7 +68,7 @@ router.post('/', authMiddle, async (req, res) => {
   if (bio) profileObject.bio = bio
   if (status) profileObject.status = status
   if (genres) {
-    profileObject.genres = typeof genres === 'string' ? genres.split(',').map(skill => skill.trim()) : genres
+    profileObject.genres = typeof genres === 'string' ? genres.split(',').map(genre => genre.trim()) : genres
   }
 
   // @@TODO - deal with projects being passed/created by user on profile
